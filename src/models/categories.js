@@ -3,8 +3,7 @@ import {Schema, model} from 'mongosse';
 const categorySchema = new Schema (
     {
         category_id:{
-            type: Number,
-            auto: true,
+            type: Schema.Types.ObjectId,
             require: true,
         },
         name:{

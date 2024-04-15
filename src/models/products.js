@@ -3,8 +3,7 @@ import {Schema, model} from "mongosse";
 const ProductSchema = new Schema(
   {
     product_id: {
-      type: String,
-      auto: true,
+      type: Schema.Types.ObjectId,
       required: true,
     },
     name: {
