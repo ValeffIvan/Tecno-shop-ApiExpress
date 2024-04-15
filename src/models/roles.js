@@ -1,4 +1,4 @@
-import {Schema, model} from 'mongosse';
+import {Schema, model} from 'mongoose';
 
 const RolSchema = new Schema(
     {

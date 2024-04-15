@@ -7,12 +7,7 @@ export const connectMongo = async () => {
       databaseName: "Tecno-Shop" 
     };
 
-    await mongoose.connect(db.uri + db.databaseName, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-      useCreateIndex: true,
-      useFindAndModify: false
-    });
+    await mongoose.connect(db.uri + db.databaseName);
     console.log("Base de Datos conectada");
   } catch (error) {
     console.error("Error al conectarse a la Base de Datos:", error.message);
