@@ -2,10 +2,6 @@ import {Schema, model} from "mongoose";
 
 const userSchema = new Schema (
    {
-    user_id:{
-        type: Schema.Types.ObjectId,
-        require: true,
-    },
     username:{
         type: String,
         require: true,
