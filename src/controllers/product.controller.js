@@ -1,9 +1,20 @@
 import product from "../models/products";
 
-export const getAll = async (req, res) =>{
+export const getAllProd = async (req, res) =>{
     try{
-        const allPosts = await product.findAll();
+        const posts = await product.findAll();
         return res.status(200).json(allPosts);
+    }catch (error){
+        console.log(error)
+        return res.status(400).json(error);
+    }
+}
+
+export const getProdById = async (req, res) =>{
+    const {product_id} = req.params;
+    try{
+        const post = await product.find(product_id);
+        return res.status(200).json(post);
     }catch (error){
         console.log(error)
         return res.status(400).json(error);
@@ -29,5 +40,12 @@ export const createProd = async (req, res) =>{
 }
 
 export const deleteProd = async (req, res) =>{
-    
+    const {product_id} = req.params;
+    try{
+        const delprod = await product.findByIdAndDelete(product_id);
+        return res.status(200).json(delprod);
+    }catch(error){
+        console.log(error);
+        return res.status(400).json(error);
+    }
 }

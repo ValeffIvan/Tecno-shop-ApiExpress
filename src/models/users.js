@@ -3,8 +3,7 @@ import {Schema, model} from "mongosse";
 const userSchema = new Schema (
    {
     user_id:{
-        type: Number,
-        auto: true,
+        type: Schema.Types.ObjectId,
         require: true,
     },
     username:{

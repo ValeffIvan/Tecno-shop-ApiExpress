@@ -3,8 +3,7 @@ import {Schema, model} from 'mongosse';
 const RolSchema = new Schema(
     {
         role_id:{
-            type: Number,
-            auto: true,
+            type: Schema.Types.ObjectId,
             required: true,
         },
         name:{
